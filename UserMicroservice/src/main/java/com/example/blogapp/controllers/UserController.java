@@ -15,7 +15,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<?> createUser(@RequestBody User user) {
         return ResponseEntity.ok(userService.createUser(user));
     }
 
@@ -24,7 +24,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(userId));
     }
 
-    @PostMapping
+    @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
